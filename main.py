@@ -16,15 +16,10 @@ img_url2 = "https://cdn.discordapp.com/attachments/644219379827081228/1058103218
 response2 = requests.get(img_url2)
 img_data2 = response2.content
 
-
-
-# this is a function to get the user input from the text input box
 def getInputBoxValue():
 	userInput = tInputBir.get()
 	return userInput
 
-
-# this is a function to get the user input from the text input box
 def getInputBoxValue():
 	userInput = tInputIki.get()
 	return userInput
@@ -35,7 +30,6 @@ root = Tk()
 root.eval('tk::PlaceWindow . center')
 root.resizable(False, False)
 
-# This is the section of code which creates the main window
 root.geometry('500x150')
 root.configure(background='#2F4F4F')
 root.title('ORDEK Hesaplayici')
@@ -61,17 +55,14 @@ yazi2.place(x=230, y=17)
 yazi3.place(x=350,y=17)
 
 
-# This is the section of code which creates a text input box
 tInputBir=Entry(root,width=7, font=('helvetica', 12, 'bold'))
 tInputBir.place(x=125, y=60)
 
 
-# This is the section of code which creates a text input box
 tInputIki=Entry(root,width=7, font=('helvetica', 12, 'bold'))
 tInputIki.place(x=240, y=61)
 
 
-# This is the section of code which creates the a label
 TL_Yazisi = tk.Label(root, text='', bg='#2F4F4F', font=('helvetica', 12, 'bold'))
 TL_Yazisi.place(x=400, y=105)
 
@@ -110,7 +101,6 @@ def change_text():
         komisyon.config(text=f"%15 Komisyon: {tlKomisyon15} TL")
         son_fiyat.config(text=f"Son Fiyat: {tlDegeriSon} TL")
     except ValueError:
-        #TL_Yazisi.config(text="xkedyyy \n error")
         madduck.place(x=182,y=75)
         
 
@@ -118,11 +108,9 @@ def change_text():
 always_on_top = tk.BooleanVar()
 
 def update_always_on_top():
-    # Set the "always on top" attribute based on the state of the checkbox
     root.attributes("-topmost", always_on_top.get())
 
 
-# This is the section of code which creates a button
 Button(root, text='Hesapla', bg='#696969', font=('arial', 12, 'normal'), command=change_text).place(x=26, y=55)
 
 always_on_top_checkbox = tk.Checkbutton(root, text="Ustte Kal", font=('arial', 9, 'normal'), bg='#696969', variable=always_on_top, command=update_always_on_top)
